@@ -3,8 +3,12 @@ apt-get install libssh-dev
 phpbrew install php-5.3.28 +default+fpm +openssl=shared -- --with-openssl-dir=/usr/bin/openssl
 phpbrew install php-5.3.29 +default+fpm+iconv+curl+cgi +openssl=shared -- --with-openssl-dir=/usr/bin/openssl
 
+#ALL PREREQS AT TIME
 apt-get install libxml2-dev libcurl4-openssl-dev pkg-config libssl-dev libbz2-dev libcurl4-gnutls-dev libmcrypt-dev libreadline-dev libxslt-dev zlib1g-dev libssl1.0-dev
 ln -s /usr/include/x86_64-linux-gnu/curl /usr/local/include/curl
+
+#FOR VIRTUALMIN 
+ln -s /root/.phpbrew/php/php-5.3.29/bin/php /usr/bin/php-cgi5.3
 
 #ERRORS
 checking libxml2 install dir... no
