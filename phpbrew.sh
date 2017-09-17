@@ -4,6 +4,9 @@ phpbrew install php-5.3.28 +default+fpm +openssl=shared -- --with-openssl-dir=/u
 phpbrew install php-5.3.29 +default+fpm+iconv+curl+cgi+apxs2 +openssl=shared -- --with-openssl-dir=/usr/bin/openssl
 
 #ALL PREREQS AT TIME
+# debian 7
+apt-get install apache2-threaded-dev libxml2-dev libcurl4-openssl-dev pkg-config libssl-dev libbz2-dev libmcrypt-dev libreadline-dev libxslt-dev zlib1g-dev libssl-dev
+# debian 9
 apt-get install apache2-dev libxml2-dev libcurl4-openssl-dev pkg-config libssl-dev libbz2-dev libcurl4-gnutls-dev libmcrypt-dev libreadline-dev libxslt-dev zlib1g-dev libssl1.0-dev
 ln -s /usr/include/x86_64-linux-gnu/curl /usr/local/include/curl
 
