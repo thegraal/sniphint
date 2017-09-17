@@ -4,13 +4,17 @@ phpbrew install php-5.3.28 +default+fpm +openssl=shared -- --with-openssl-dir=/u
 phpbrew install php-5.3.29 +default+fpm+iconv+curl+cgi+apxs2 +openssl=shared -- --with-openssl-dir=/usr/bin/openssl
 
 #ALL PREREQS AT TIME
-apt-get install libxml2-dev libcurl4-openssl-dev pkg-config libssl-dev libbz2-dev libcurl4-gnutls-dev libmcrypt-dev libreadline-dev libxslt-dev zlib1g-dev libssl1.0-dev
+apt-get install apache2-dev libxml2-dev libcurl4-openssl-dev pkg-config libssl-dev libbz2-dev libcurl4-gnutls-dev libmcrypt-dev libreadline-dev libxslt-dev zlib1g-dev libssl1.0-dev
 ln -s /usr/include/x86_64-linux-gnu/curl /usr/local/include/curl
 
 #FOR VIRTUALMIN 
 ln -s /root/.phpbrew/php/php-5.3.29/bin/php /usr/bin/php-cgi5.3
 
 #ERRORS
+
+Exception: apxs binary is not executable:
+apt-get install apache2-dev
+
 checking libxml2 install dir... no
 checking for xml2-config path...
 configure: error: xml2-config not found. Please check your libxml2 installation.
@@ -74,6 +78,9 @@ apt-get install zlib1g-dev
 Makefile:577: recipe for target 'ext/openssl/openssl.lo' failed
 make: *** [ext/openssl/openssl.lo] Error 1
 apt-get install libssl1.0-dev
+
+Exception: apxs binary is not executable:
+apt-get install apache2-dev
 
 
 
