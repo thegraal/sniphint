@@ -3,6 +3,9 @@ apt-get install libssh-dev
 phpbrew install php-5.3.28 +default+fpm +openssl=shared -- --with-openssl-dir=/usr/bin/openssl
 phpbrew install php-5.3.29 +default+fpm+iconv+curl+cgi +openssl=shared -- --with-openssl-dir=/usr/bin/openssl
 
+apt-get install libxml2-dev libcurl4-openssl-dev pkg-config libssl-dev libbz2-dev libcurl4-gnutls-dev libmcrypt-dev libreadline-dev libxslt-dev zlib1g-dev libssl1.0-dev
+ln -s /usr/include/x86_64-linux-gnu/curl /usr/local/include/curl
+
 #ERRORS
 checking libxml2 install dir... no
 checking for xml2-config path...
@@ -60,6 +63,13 @@ checking for zip archive read/writesupport... yes
 checking pcre install prefix... no
 checking for the location of zlib... configure: error: zip support requires ZLIB. Use --with-zlib-dir=<DIR> to specify prefix where ZLIB include and library are located
 apt-get install zlib1g-dev
+
+/usr/include/openssl/rand.h:47:1: note: declared here
+ DEPRECATEDIN_1_1_0(int RAND_pseudo_bytes(unsigned char *buf, int num))
+ ^
+Makefile:577: recipe for target 'ext/openssl/openssl.lo' failed
+make: *** [ext/openssl/openssl.lo] Error 1
+apt-get install libssl1.0-dev
 
 
 
