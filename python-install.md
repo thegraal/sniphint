@@ -4,6 +4,7 @@ Prerequisites
 apt-get install build-essential
 apt-get install libncurses5-dev libncursesw5-dev libreadline6-dev
 apt-get install libdb5.1-dev libgdbm-dev libsqlite3-dev libssl-dev
+(apt-get install libdb5.3++-dev libgdbm-dev libsqlite3-dev libssl-dev)
 apt-get install libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev
 </pre>
 
