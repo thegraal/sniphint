@@ -7,6 +7,7 @@ sudo nano /etc/wireguard/wg0.conf
 
 sudo wg-quick up wg0
 sudo systemctl enable wg-quick@wg0.service
+sudo systemctl start wg-quick@wg0.service
 sudo systemctl status wg-quick@wg0.service
 
 ```
